@@ -21,31 +21,21 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); font-size: 14px; }
-
-  /* Header */
   .header { background: var(--header-grad); color: white; padding: 20px 24px; }
   .header h1 { font-size: 20px; font-weight: 700; }
   .header .subtitle { font-size: 13px; opacity: 0.8; margin-top: 4px; }
   .header .badge { display: inline-block; background: rgba(255,255,255,0.2); border-radius: 12px; padding: 2px 10px; font-size: 12px; margin-top: 8px; margin-right: 6px; }
-
-  /* Nav */
   .nav { background: var(--primary); position: sticky; top: 0; z-index: 100; display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .nav a { color: rgba(255,255,255,0.75); text-decoration: none; padding: 10px 16px; font-size: 13px; white-space: nowrap; flex-shrink: 0; }
   .nav a:hover { color: white; background: rgba(255,255,255,0.1); }
-
-  /* KPI */
   .kpi-grid { display: flex; flex-wrap: wrap; gap: 12px; padding: 16px; }
   .kpi-card { background: var(--card-bg); border-radius: 10px; padding: 14px 16px; flex: 1 1 140px; min-width: 120px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); border-top: 3px solid var(--primary); }
   .kpi-card .label { font-size: 12px; color: var(--text-light); margin-bottom: 6px; }
   .kpi-card .value { font-size: 22px; font-weight: 700; color: var(--primary); }
   .kpi-card .sub { font-size: 11px; color: var(--text-light); margin-top: 2px; }
-
-  /* Section */
   .section { padding: 0 16px 16px; }
   .section-title { font-size: 15px; font-weight: 700; color: var(--primary); padding: 16px 0 10px; border-bottom: 2px solid var(--primary-light); margin-bottom: 12px; }
   .section-title span { font-size: 12px; font-weight: 400; color: var(--text-light); margin-left: 8px; }
-
-  /* Table */
   .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
   table { width: 100%; border-collapse: collapse; background: var(--card-bg); }
   th { background: var(--primary); color: white; padding: 7px 12px; text-align: center; font-size: 13px; white-space: nowrap; }
@@ -54,55 +44,37 @@
   tr:nth-child(even) td { background: #f7f9fd; }
   td.left { text-align: left; }
   td.red { color: var(--red); font-weight: 600; }
-  td.green { color: var(--green); font-weight: 600; }
-  td.total-row td { font-weight: 700; background: #eef2fb; }
-
-  /* Progress bar */
   .prog-bar { height: 8px; border-radius: 4px; background: #dce4f0; overflow: hidden; min-width: 80px; }
-  .prog-fill { height: 100%; border-radius: 4px; background: var(--primary); transition: width 0.3s; }
+  .prog-fill { height: 100%; border-radius: 4px; background: var(--primary); }
   .prog-fill.orange { background: var(--orange); }
   .prog-fill.red { background: var(--red); }
   .prog-fill.green { background: var(--green); }
   .prog-wrap { display: flex; align-items: center; gap: 6px; }
   .prog-pct { font-size: 12px; color: var(--text-light); min-width: 38px; }
-
-  /* speed color */
-  .speed-low { color: var(--green); font-weight: 600; }
-  .speed-mid { color: var(--orange); font-weight: 600; }
   .speed-high { color: var(--red); font-weight: 600; }
-
-  /* City stacked bar */
   .city-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
   .city-label { width: 72px; font-size: 12px; color: var(--text-light); text-align: right; flex-shrink: 0; }
   .city-bar { flex: 1; display: flex; border-radius: 4px; overflow: hidden; height: 26px; }
   .city-seg { display: flex; align-items: center; justify-content: center; font-size: 11px; color: white; font-weight: 600; overflow: hidden; white-space: nowrap; padding: 0 3px; }
-  .city-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; margin-bottom: 10px; }
+  .city-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
   .city-legend-item { display: flex; align-items: center; gap: 4px; font-size: 12px; }
   .city-legend-dot { width: 12px; height: 12px; border-radius: 2px; flex-shrink: 0; }
-
-  /* details (折叠) */
   details { margin-bottom: 8px; background: var(--card-bg); border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); width: 100%; }
   details summary { cursor: pointer; padding: 10px 14px; font-weight: 600; color: var(--primary); font-size: 13px; list-style: none; user-select: none; display: flex; align-items: center; }
   details summary::before { content: '▶'; margin-right: 8px; font-size: 10px; transition: transform 0.2s; }
   details[open] summary::before { transform: rotate(90deg); }
   details .table-wrap { border-radius: 0 0 8px 8px; box-shadow: none; }
-
-  /* T+2 活跃率 双栏 */
   .t2-grid { display: flex; gap: 12px; flex-wrap: wrap; }
   .t2-col { flex: 1 1 200px; background: var(--card-bg); border-radius: 8px; padding: 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
   .t2-col h4 { font-size: 13px; color: var(--primary); margin-bottom: 10px; font-weight: 600; }
   .t2-item { margin-bottom: 8px; }
   .t2-item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px; font-size: 12px; }
-  .t2-item-name { color: var(--text); }
-  .t2-item-pct { font-weight: 600; }
   .t2-item-pct.low { color: var(--red); }
-
   @media (max-width: 600px) {
     .kpi-grid { gap: 8px; padding: 10px; }
     .kpi-card { padding: 10px 12px; flex: 1 1 120px; }
     .kpi-card .value { font-size: 18px; }
     .section { padding: 0 10px 12px; }
-    .section-title { font-size: 14px; }
   }
 </style>
 </head>
@@ -130,39 +102,15 @@
 
 <!-- KPI -->
 <div class="kpi-grid">
-  <div class="kpi-card">
-    <div class="label">总订单</div>
-    <div class="value">393</div>
-    <div class="sub">0522当日</div>
-  </div>
-  <div class="kpi-card">
-    <div class="label">非退款订单</div>
-    <div class="value">349</div>
-    <div class="sub">退款率 11.2%</div>
-  </div>
-  <div class="kpi-card">
-    <div class="label">正常班进量</div>
-    <div class="value">333</div>
-    <div class="sub">当日正常班</div>
-  </div>
-  <div class="kpi-card">
-    <div class="label">退款率</div>
-    <div class="value">11.2%</div>
-    <div class="sub">44/393</div>
-  </div>
-  <div class="kpi-card">
-    <div class="label">加微率</div>
-    <div class="value">58.3%</div>
-    <div class="sub">194/333</div>
-  </div>
-  <div class="kpi-card">
-    <div class="label">主动加微率</div>
-    <div class="value">46.8%</div>
-    <div class="sub">156/333</div>
-  </div>
+  <div class="kpi-card"><div class="label">总订单</div><div class="value">393</div><div class="sub">0522当日</div></div>
+  <div class="kpi-card"><div class="label">非退款订单</div><div class="value">349</div><div class="sub">退款44单</div></div>
+  <div class="kpi-card"><div class="label">正常班进量</div><div class="value">333</div><div class="sub">当日正常班</div></div>
+  <div class="kpi-card"><div class="label">退款率</div><div class="value">11.2%</div><div class="sub">44/393</div></div>
+  <div class="kpi-card"><div class="label">加微率</div><div class="value">58.3%</div><div class="sub">194/333</div></div>
+  <div class="kpi-card"><div class="label">主动加微率</div><div class="value">46.8%</div><div class="sub">156/333</div></div>
 </div>
 
-<!-- ① amaze实时进量 -->
+<!-- ① amaze -->
 <div class="section" id="amaze">
   <div class="section-title">① amaze实时进量 <span>T+1 | 截至0522</span></div>
   <div class="table-wrap">
@@ -170,52 +118,20 @@
       <thead><tr><th>年级</th><th>实时进量</th><th>目标</th><th>达成率</th><th>进度</th></tr></thead>
       <tbody>
         <tr>
-          <td class="left"><strong>总计</strong></td>
-          <td><strong>696</strong></td>
-          <td>2300</td>
-          <td><strong>30.3%</strong></td>
-          <td>
-            <div class="prog-wrap">
-              <div class="prog-bar" style="min-width:100px"><div class="prog-fill" style="width:30.3%"></div></div>
-              <span class="prog-pct">30.3%</span>
-            </div>
-          </td>
+          <td class="left"><strong>总计</strong></td><td><strong>696</strong></td><td>2300</td><td><strong>30.3%</strong></td>
+          <td><div class="prog-wrap"><div class="prog-bar" style="min-width:100px"><div class="prog-fill" style="width:30.3%"></div></div><span class="prog-pct">30.3%</span></div></td>
         </tr>
         <tr>
-          <td class="left">新高一 (初三)</td>
-          <td>628</td>
-          <td>2024</td>
-          <td>31.0%</td>
-          <td>
-            <div class="prog-wrap">
-              <div class="prog-bar" style="min-width:100px"><div class="prog-fill" style="width:31.0%"></div></div>
-              <span class="prog-pct">31.0%</span>
-            </div>
-          </td>
+          <td class="left">新高一 (初三)</td><td>628</td><td>2024</td><td>31.0%</td>
+          <td><div class="prog-wrap"><div class="prog-bar" style="min-width:100px"><div class="prog-fill" style="width:31%"></div></div><span class="prog-pct">31.0%</span></div></td>
         </tr>
         <tr>
-          <td class="left">新高二 (高一)</td>
-          <td>38</td>
-          <td>184</td>
-          <td>20.7%</td>
-          <td>
-            <div class="prog-wrap">
-              <div class="prog-bar" style="min-width:100px"><div class="prog-fill orange" style="width:20.7%"></div></div>
-              <span class="prog-pct">20.7%</span>
-            </div>
-          </td>
+          <td class="left">新高二 (高一)</td><td>38</td><td>184</td><td>20.7%</td>
+          <td><div class="prog-wrap"><div class="prog-bar" style="min-width:100px"><div class="prog-fill orange" style="width:20.7%"></div></div><span class="prog-pct">20.7%</span></div></td>
         </tr>
         <tr>
-          <td class="left">新高三 (高二)</td>
-          <td>30</td>
-          <td>92</td>
-          <td>32.6%</td>
-          <td>
-            <div class="prog-wrap">
-              <div class="prog-bar" style="min-width:100px"><div class="prog-fill" style="width:32.6%"></div></div>
-              <span class="prog-pct">32.6%</span>
-            </div>
-          </td>
+          <td class="left">新高三 (高二)</td><td>30</td><td>92</td><td>32.6%</td>
+          <td><div class="prog-wrap"><div class="prog-bar" style="min-width:100px"><div class="prog-fill" style="width:32.6%"></div></div><span class="prog-pct">32.6%</span></div></td>
         </tr>
       </tbody>
     </table>
@@ -229,158 +145,77 @@
     <table>
       <thead><tr><th>渠道</th><th>正常班</th><th>加微率</th><th>主动加微率</th><th>退款率</th></tr></thead>
       <tbody>
-        <tr>
-          <td class="left" style="background:#eef2fb;font-weight:700">大盘</td>
-          <td style="font-weight:700">333</td>
-          <td style="font-weight:700">58.3%</td>
-          <td style="font-weight:700">46.8%</td>
-          <td style="font-weight:700">11.2%</td>
-        </tr>
-        <tr>
-          <td class="left">最小年轮</td>
-          <td>290</td>
-          <td>59.7%</td>
-          <td>48.6%</td>
-          <td>10.4%</td>
-        </tr>
-        <tr>
-          <td class="left">自然流</td>
-          <td>42</td>
-          <td>50.0%</td>
-          <td class="red">35.7% 🔴</td>
-          <td class="red">11.3% 🔴</td>
-        </tr>
-        <tr>
-          <td class="left">合肥徽起</td>
-          <td>1</td>
-          <td>0.0%</td>
-          <td class="red">0.0% 🔴</td>
-          <td class="red">60.0% 🔴</td>
-        </tr>
+        <tr><td class="left" style="background:#eef2fb;font-weight:700">大盘</td><td style="font-weight:700">333</td><td style="font-weight:700">58.3%</td><td style="font-weight:700">46.8%</td><td style="font-weight:700">11.2%</td></tr>
+        <tr><td class="left">最小年轮</td><td>300</td><td>59.3%</td><td>47.3%</td><td>10.6%</td></tr>
+        <tr><td class="left">自然流</td><td>29</td><td>51.7%</td><td class="red">44.8% 🔴</td><td>8.3%</td></tr>
+        <tr><td class="left">山东深山</td><td>3</td><td>33.3%</td><td class="red">33.3% 🔴</td><td class="red">25.0% 🔴</td></tr>
+        <tr><td class="left">合肥徽起</td><td>1</td><td>0.0%</td><td class="red">0.0% 🔴</td><td class="red">60.0% 🔴</td></tr>
       </tbody>
     </table>
   </div>
-  <div style="font-size:11px;color:#888;margin-top:6px;padding-left:2px">🔴 主动加微率 &lt; 大盘(46.8%) 或 退款率 &gt; 大盘(11.2%)</div>
+  <div style="font-size:11px;color:#888;margin-top:6px">🔴 主动加微率 &lt; 大盘(46.8%) 或 退款率 &gt; 大盘(11.2%)</div>
 </div>
 
 <!-- ③ 年级流量达成 -->
 <div class="section" id="grade">
-  <div class="section-title">③ 年级流量达成 T+1 <span>流速计算基于0522（剩余5天：0523-0527）</span></div>
+  <div class="section-title">③ 年级流量达成 T+1 <span>剩余5天（0523-0527）</span></div>
   <div class="table-wrap">
     <table style="min-width:680px">
       <thead>
         <tr>
-          <th>年级</th>
-          <th>预估流量</th>
-          <th>总进度</th>
+          <th>年级</th><th>预估流量</th><th>总进度</th>
           <th>剩余预期流速<br><span style="font-weight:400;font-size:11px">距目标还需/天</span></th>
           <th>实际流速<br><span style="font-weight:400;font-size:11px">近2日均速</span></th>
-          <th>总进量</th>
-          <th>0521</th>
-          <th>0522</th>
+          <th>总进量</th><th>0521</th><th>0522</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td class="left" style="background:#eef2fb;font-weight:700">合计</td>
           <td style="font-weight:700">2300</td>
-          <td>
-            <div class="prog-wrap">
-              <div class="prog-bar" style="min-width:80px"><div class="prog-fill" style="width:23.9%"></div></div>
-              <span class="prog-pct" style="font-weight:700">23.9%</span>
-            </div>
-          </td>
+          <td><div class="prog-wrap"><div class="prog-bar" style="min-width:80px"><div class="prog-fill" style="width:23.9%"></div></div><span class="prog-pct" style="font-weight:700">23.9%</span></div></td>
           <td class="speed-high">351/天</td>
           <td>275.0<br><span style="font-size:11px;color:#888">近2日 217+333=550</span></td>
-          <td style="font-weight:700">550</td>
-          <td>217</td>
-          <td>333</td>
+          <td style="font-weight:700">550</td><td>217</td><td>333</td>
         </tr>
         <tr>
-          <td class="left">新高一</td>
-          <td>2024</td>
-          <td>
-            <div class="prog-wrap">
-              <div class="prog-bar" style="min-width:80px"><div class="prog-fill" style="width:24.8%"></div></div>
-              <span class="prog-pct">24.8%</span>
-            </div>
-          </td>
+          <td class="left">新高一</td><td>2024</td>
+          <td><div class="prog-wrap"><div class="prog-bar" style="min-width:80px"><div class="prog-fill" style="width:24.8%"></div></div><span class="prog-pct">24.8%</span></div></td>
           <td class="speed-high">305/天</td>
           <td>250.5<br><span style="font-size:11px;color:#888">近2日 203+298=501</span></td>
-          <td>501</td>
-          <td>203</td>
-          <td>298</td>
+          <td>501</td><td>203</td><td>298</td>
         </tr>
         <tr>
-          <td class="left">新高二</td>
-          <td>184</td>
-          <td>
-            <div class="prog-wrap">
-              <div class="prog-bar" style="min-width:80px"><div class="prog-fill orange" style="width:16.3%"></div></div>
-              <span class="prog-pct">16.3%</span>
-            </div>
-          </td>
+          <td class="left">新高二</td><td>184</td>
+          <td><div class="prog-wrap"><div class="prog-bar" style="min-width:80px"><div class="prog-fill orange" style="width:16.3%"></div></div><span class="prog-pct">16.3%</span></div></td>
           <td class="speed-high">31/天</td>
           <td>15.0<br><span style="font-size:11px;color:#888">近2日 12+18=30</span></td>
-          <td>30</td>
-          <td>12</td>
-          <td>18</td>
+          <td>30</td><td>12</td><td>18</td>
         </tr>
         <tr>
-          <td class="left">新高三</td>
-          <td>92</td>
-          <td>
-            <div class="prog-wrap">
-              <div class="prog-bar" style="min-width:80px"><div class="prog-fill red" style="width:20.7%"></div></div>
-              <span class="prog-pct">20.7%</span>
-            </div>
-          </td>
+          <td class="left">新高三</td><td>92</td>
+          <td><div class="prog-wrap"><div class="prog-bar" style="min-width:80px"><div class="prog-fill red" style="width:20.7%"></div></div><span class="prog-pct">20.7%</span></div></td>
           <td class="speed-high">15/天</td>
           <td>9.5<br><span style="font-size:11px;color:#888">近2日 2+17=19</span></td>
-          <td>19</td>
-          <td>2</td>
-          <td>17</td>
+          <td>19</td><td>2</td><td>17</td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<!-- ④ 渠道×年级交叉 -->
+<!-- ④ 渠道×年级 -->
 <div class="section" id="cross">
   <div class="section-title">④ 渠道和年级进量 <span>当日正常班</span></div>
   <div class="table-wrap">
     <table>
       <thead><tr><th>渠道</th><th>新高一</th><th>新高二</th><th>新高三</th><th>合计</th></tr></thead>
       <tbody>
-        <tr>
-          <td class="left" style="background:#eef2fb;font-weight:700">合计</td>
-          <td style="font-weight:700">298</td>
-          <td style="font-weight:700">18</td>
-          <td style="font-weight:700">17</td>
-          <td style="font-weight:700">333</td>
-        </tr>
-        <tr>
-          <td class="left">最小年轮</td>
-          <td>260 <span style="color:#888;font-size:11px">(87.2%)</span></td>
-          <td>16 <span style="color:#888;font-size:11px">(88.9%)</span></td>
-          <td>14 <span style="color:#888;font-size:11px">(82.4%)</span></td>
-          <td>290</td>
-        </tr>
-        <tr>
-          <td class="left">自然流</td>
-          <td>38 <span style="color:#888;font-size:11px">(12.8%)</span></td>
-          <td>1 <span style="color:#888;font-size:11px">(5.6%)</span></td>
-          <td>3 <span style="color:#888;font-size:11px">(17.6%)</span></td>
-          <td>42</td>
-        </tr>
-        <tr>
-          <td class="left">合肥徽起</td>
-          <td>0 <span style="color:#888;font-size:11px">(0%)</span></td>
-          <td>1 <span style="color:#888;font-size:11px">(5.6%)</span></td>
-          <td>0 <span style="color:#888;font-size:11px">(0%)</span></td>
-          <td>1</td>
-        </tr>
+        <tr><td class="left" style="background:#eef2fb;font-weight:700">合计</td><td style="font-weight:700">298</td><td style="font-weight:700">18</td><td style="font-weight:700">17</td><td style="font-weight:700">333</td></tr>
+        <tr><td class="left">最小年轮</td><td>269 <span style="color:#888;font-size:11px">(90.3%)</span></td><td>16 <span style="color:#888;font-size:11px">(88.9%)</span></td><td>15 <span style="color:#888;font-size:11px">(88.2%)</span></td><td>300</td></tr>
+        <tr><td class="left">自然流</td><td>26 <span style="color:#888;font-size:11px">(8.7%)</span></td><td>1 <span style="color:#888;font-size:11px">(5.6%)</span></td><td>2 <span style="color:#888;font-size:11px">(11.8%)</span></td><td>29</td></tr>
+        <tr><td class="left">山东深山</td><td>3 <span style="color:#888;font-size:11px">(1.0%)</span></td><td>0</td><td>0</td><td>3</td></tr>
+        <tr><td class="left">合肥徽起</td><td>0</td><td>1 <span style="color:#888;font-size:11px">(5.6%)</span></td><td>0</td><td>1</td></tr>
       </tbody>
     </table>
   </div>
@@ -392,32 +227,34 @@
   <div style="font-size:11px;color:#888;margin-bottom:8px">🔴 主动加微率 &lt; 大盘(46.8%) 或 退款率 &gt; 大盘(11.2%)</div>
 
   <details open>
-    <summary>最小年轮（290单）</summary>
+    <summary>最小年轮（300单）</summary>
     <div class="table-wrap">
       <table style="width:100%">
         <thead><tr><th>达人</th><th>正常班</th><th>加微率</th><th>主动加微率</th><th>退款率</th></tr></thead>
         <tbody>
-          <tr><td class="left">李老师讲初升高</td><td>69</td><td>60.9%</td><td class="red">43.5% 🔴</td><td>10.1%</td></tr>
+          <tr><td class="left">李老师讲初升高</td><td>69</td><td>58.0%</td><td class="red">43.5% 🔴</td><td>10.1%</td></tr>
           <tr><td class="left">千佰惠公司聂老师</td><td>55</td><td>65.5%</td><td>52.7%</td><td class="red">13.6% 🔴</td></tr>
-          <tr><td class="left">李主任聊升学</td><td>31</td><td>58.1%</td><td class="red">35.5% 🔴</td><td>5.9%</td></tr>
-          <tr><td class="left">行知老师讲规划</td><td>18</td><td>77.8%</td><td>72.2%</td><td class="red">20.8% 🔴</td></tr>
-          <tr><td class="left">一线王老师讲选科</td><td>17</td><td>76.5%</td><td>58.8%</td><td class="red">19.0% 🔴</td></tr>
-          <tr><td class="left">王老师说选科</td><td>14</td><td>85.7%</td><td>85.7%</td><td>6.7%</td></tr>
-          <tr><td class="left">刘老师讲中考a</td><td>10</td><td>90.0%</td><td>70.0%</td><td>0.0%</td></tr>
-          <tr><td class="left">初升高规划闫老师</td><td>8</td><td>37.5%</td><td class="red">25.0% 🔴</td><td>0.0%</td></tr>
+          <tr><td class="left">李主任聊升学</td><td>31</td><td>41.9%</td><td class="red">35.5% 🔴</td><td>5.9%</td></tr>
+          <tr><td class="left">行知老师讲规划</td><td>18</td><td>83.3%</td><td>72.2%</td><td class="red">20.8% 🔴</td></tr>
+          <tr><td class="left">一线王老师讲选科</td><td>17</td><td>70.6%</td><td>58.8%</td><td class="red">19.0% 🔴</td></tr>
+          <tr><td class="left">王老师说选科</td><td>14</td><td>92.9%</td><td>85.7%</td><td>6.7%</td></tr>
+          <tr><td class="left">刘老师讲中考a</td><td>10</td><td>80.0%</td><td>70.0%</td><td>0.0%</td></tr>
+          <tr><td class="left">初升高规划闫老师</td><td>8</td><td>25.0%</td><td class="red">25.0% 🔴</td><td>0.0%</td></tr>
           <tr><td class="left">慧智升学</td><td>7</td><td>42.9%</td><td class="red">28.6% 🔴</td><td>0.0%</td></tr>
+          <tr><td class="left">孙老师讲升学课堂</td><td>6</td><td>50.0%</td><td class="red">0.0% 🔴</td><td>0.0%</td></tr>
           <tr><td class="left">郝老师聊选科-行知</td><td>6</td><td>100.0%</td><td>100.0%</td><td class="red">14.3% 🔴</td></tr>
-          <tr><td class="left">升学考试洋老师</td><td>6</td><td>33.3%</td><td class="red">16.7% 🔴</td><td class="red">25.0% 🔴</td></tr>
-          <tr><td class="left">小张老师</td><td>6</td><td>50.0%</td><td class="red">0.0% 🔴</td><td>0.0%</td></tr>
-          <tr><td class="left">珊伊老师讲高考</td><td>5</td><td>80.0%</td><td>60.0%</td><td>0.0%</td></tr>
-          <tr><td class="left">小严老师初高阶提升</td><td>4</td><td>75.0%</td><td>75.0%</td><td class="red">20.0% 🔴</td></tr>
-          <tr><td class="left">王老师升学</td><td>4</td><td>75.0%</td><td>50.0%</td><td>0.0%</td></tr>
+          <tr><td class="left">升学考试洋老师</td><td>6</td><td>50.0%</td><td class="red">16.7% 🔴</td><td class="red">25.0% 🔴</td></tr>
+          <tr><td class="left">小张老师</td><td>6</td><td>0.0%</td><td class="red">0.0% 🔴</td><td>0.0%</td></tr>
+          <tr><td class="left">珊伊老师讲高考</td><td>5</td><td>60.0%</td><td>60.0%</td><td>0.0%</td></tr>
+          <tr><td class="left">小严老师初高阶提升课堂</td><td>4</td><td>75.0%</td><td>75.0%</td><td class="red">20.0% 🔴</td></tr>
+          <tr><td class="left">王老师升学</td><td>4</td><td>50.0%</td><td>50.0%</td><td>0.0%</td></tr>
           <tr><td class="left">中考志愿填报刘老师</td><td>4</td><td>75.0%</td><td>50.0%</td><td>0.0%</td></tr>
-          <tr><td class="left">谢老师讲课堂</td><td>4</td><td>25.0%</td><td class="red">0.0% 🔴</td><td>0.0%</td></tr>
-          <tr><td class="left">蔡稳稳</td><td>4</td><td>25.0%</td><td class="red">0.0% 🔴</td><td>0.0%</td></tr>
-          <tr><td class="left">赵老师讲选科</td><td>3</td><td>66.7%</td><td class="red">0.0% 🔴</td><td>0.0%</td></tr>
-          <tr><td class="left">高阶二规划</td><td>3</td><td>33.3%</td><td class="red">33.3% 🔴</td><td class="red">25.0% 🔴</td></tr>
-          <tr><td class="left">田老师讲选科</td><td>3</td><td>100.0%</td><td>66.7%</td><td>0.0%</td></tr>
+          <tr><td class="left">达人ID:837205243470218</td><td>4</td><td>50.0%</td><td class="red">25.0% 🔴</td><td class="red">33.3% 🔴</td></tr>
+          <tr><td class="left">谢老师讲课堂</td><td>4</td><td>0.0%</td><td class="red">0.0% 🔴</td><td>0.0%</td></tr>
+          <tr><td class="left">蔡稳稳</td><td>4</td><td>0.0%</td><td class="red">0.0% 🔴</td><td>0.0%</td></tr>
+          <tr><td class="left">赵老师讲选科</td><td>3</td><td>33.3%</td><td class="red">0.0% 🔴</td><td>0.0%</td></tr>
+          <tr><td class="left">高阶二规划</td><td>3</td><td>100.0%</td><td class="red">33.3% 🔴</td><td class="red">25.0% 🔴</td></tr>
+          <tr><td class="left">田老师讲选科</td><td>3</td><td>66.7%</td><td>66.7%</td><td>0.0%</td></tr>
           <tr><td class="left">昭昭老师讲升学</td><td>3</td><td>33.3%</td><td class="red">33.3% 🔴</td><td>0.0%</td></tr>
           <tr><td class="left">高步云衢</td><td>2</td><td>100.0%</td><td>100.0%</td><td>0.0%</td></tr>
           <tr><td class="left">波波老师（初中升学）</td><td>2</td><td>0.0%</td><td class="red">0.0% 🔴</td><td>0.0%</td></tr>
@@ -429,17 +266,26 @@
   </details>
 
   <details open>
-    <summary>自然流（42单）</summary>
+    <summary>自然流（29单）</summary>
     <div class="table-wrap">
       <table style="width:100%">
         <thead><tr><th>达人</th><th>正常班</th><th>加微率</th><th>主动加微率</th><th>退款率</th></tr></thead>
         <tbody>
           <tr><td class="left">达人ID:938296759038336</td><td>21</td><td>66.7%</td><td>57.1%</td><td>8.7%</td></tr>
-          <tr><td class="left">孙老师讲升学课堂</td><td>6</td><td>33.3%</td><td class="red">0.0% 🔴</td><td>0.0%</td></tr>
-          <tr><td class="left">（达人ID空）</td><td>5</td><td>20.0%</td><td class="red">0.0% 🔴</td><td>0.0%</td></tr>
-          <tr><td class="left">达人ID:837205243470218</td><td>4</td><td>25.0%</td><td class="red">25.0% 🔴</td><td class="red">33.3% 🔴</td></tr>
-          <tr><td class="left">达人ID:4378706366961787</td><td>3</td><td>33.3%</td><td class="red">33.3% 🔴</td><td class="red">25.0% 🔴</td></tr>
+          <tr><td class="left">（达人ID空）</td><td>5</td><td>0.0%</td><td class="red">0.0% 🔴</td><td>0.0%</td></tr>
           <tr><td class="left">达人ID:1077149236462013</td><td>3</td><td>33.3%</td><td class="red">33.3% 🔴</td><td>0.0%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <details open>
+    <summary>山东深山（3单）</summary>
+    <div class="table-wrap">
+      <table style="width:100%">
+        <thead><tr><th>达人</th><th>正常班</th><th>加微率</th><th>主动加微率</th><th>退款率</th></tr></thead>
+        <tbody>
+          <tr><td class="left">达人ID:4378706366961787</td><td>3</td><td>33.3%</td><td class="red">33.3% 🔴</td><td class="red">25.0% 🔴</td></tr>
         </tbody>
       </table>
     </div>
@@ -465,41 +311,45 @@
     <div class="t2-col">
       <h4>按渠道（大盘 24.3%）</h4>
       <div class="t2-item">
-        <div class="t2-item-header"><span class="t2-item-name">大盘</span><span class="t2-item-pct">24.3%</span></div>
+        <div class="t2-item-header"><span>大盘</span><span class="t2-item-pct">24.3%</span></div>
         <div class="prog-bar"><div class="prog-fill" style="width:24.3%"></div></div>
       </div>
       <div class="t2-item">
-        <div class="t2-item-header"><span class="t2-item-name">最小年轮</span><span class="t2-item-pct">25.5%</span></div>
-        <div class="prog-bar"><div class="prog-fill green" style="width:25.5%"></div></div>
+        <div class="t2-item-header"><span>最小年轮</span><span class="t2-item-pct">25.0%</span></div>
+        <div class="prog-bar"><div class="prog-fill green" style="width:25%"></div></div>
       </div>
       <div class="t2-item">
-        <div class="t2-item-header"><span class="t2-item-name">自然流</span><span class="t2-item-pct low">16.7% ↓</span></div>
-        <div class="prog-bar"><div class="prog-fill red" style="width:16.7%"></div></div>
+        <div class="t2-item-header"><span>山东深山</span><span class="t2-item-pct">33.3%</span></div>
+        <div class="prog-bar"><div class="prog-fill green" style="width:33.3%"></div></div>
       </div>
       <div class="t2-item">
-        <div class="t2-item-header"><span class="t2-item-name">合肥徽起</span><span class="t2-item-pct low">0.0% ↓</span></div>
+        <div class="t2-item-header"><span>自然流</span><span class="t2-item-pct low">17.2% ↓</span></div>
+        <div class="prog-bar"><div class="prog-fill red" style="width:17.2%"></div></div>
+      </div>
+      <div class="t2-item">
+        <div class="t2-item-header"><span>合肥徽起</span><span class="t2-item-pct low">0.0% ↓</span></div>
         <div class="prog-bar"><div class="prog-fill red" style="width:1%"></div></div>
       </div>
     </div>
     <div class="t2-col">
       <h4>按年级（大盘 24.3%）</h4>
       <div class="t2-item">
-        <div class="t2-item-header"><span class="t2-item-name">新高一</span><span class="t2-item-pct">26.2%</span></div>
+        <div class="t2-item-header"><span>新高一</span><span class="t2-item-pct">26.2%</span></div>
         <div class="prog-bar"><div class="prog-fill green" style="width:26.2%"></div></div>
       </div>
       <div class="t2-item">
-        <div class="t2-item-header"><span class="t2-item-name">新高二</span><span class="t2-item-pct low">11.1% ↓</span></div>
+        <div class="t2-item-header"><span>新高二</span><span class="t2-item-pct low">11.1% ↓</span></div>
         <div class="prog-bar"><div class="prog-fill red" style="width:11.1%"></div></div>
       </div>
       <div class="t2-item">
-        <div class="t2-item-header"><span class="t2-item-name">新高三</span><span class="t2-item-pct low">5.9% ↓</span></div>
+        <div class="t2-item-header"><span>新高三</span><span class="t2-item-pct low">5.9% ↓</span></div>
         <div class="prog-bar"><div class="prog-fill red" style="width:5.9%"></div></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ⑦ 城市线级分布 -->
+<!-- ⑦ 城市线级 -->
 <div class="section" id="city">
   <div class="section-title">⑦ 城市线级分布 <span>当日正常班</span></div>
   <div class="city-legend">
@@ -509,38 +359,43 @@
     <div class="city-legend-item"><div class="city-legend-dot" style="background:#42a5f5"></div>三线</div>
     <div class="city-legend-item"><div class="city-legend-dot" style="background:#90caf9"></div>四线</div>
     <div class="city-legend-item"><div class="city-legend-dot" style="background:#bbdefb"></div>五线</div>
-    <div class="city-legend-item"><div class="city-legend-dot" style="background:#e3f2fd"></div>其他</div>
   </div>
-
-  <!-- 最小年轮: 一线16, 新一线52, 二线44, 三线69, 四线79, 五线29, 其他1 = 290 -->
+  <!-- 最小年轮: 一线17, 新一线53, 二线45, 三线71, 四线82, 五线31, 其他1 = 300 -->
   <div class="city-row">
     <div class="city-label">最小年轮</div>
     <div class="city-bar">
-      <div class="city-seg" style="background:#1565c0;width:5.5%">16</div>
-      <div class="city-seg" style="background:#1976d2;width:17.9%">52</div>
-      <div class="city-seg" style="background:#1e88e5;width:15.2%">44</div>
-      <div class="city-seg" style="background:#42a5f5;width:23.8%">69</div>
-      <div class="city-seg" style="background:#90caf9;width:27.2%;color:#1a3a6b">79</div>
-      <div class="city-seg" style="background:#bbdefb;width:10.0%;color:#1a3a6b">29</div>
-      <div class="city-seg" style="background:#e3f2fd;width:0.3%;color:#1a3a6b"></div>
+      <div class="city-seg" style="background:#1565c0;width:5.7%">17</div>
+      <div class="city-seg" style="background:#1976d2;width:17.7%">53</div>
+      <div class="city-seg" style="background:#1e88e5;width:15.0%">45</div>
+      <div class="city-seg" style="background:#42a5f5;width:23.7%">71</div>
+      <div class="city-seg" style="background:#90caf9;width:27.3%;color:#1a3a6b">82</div>
+      <div class="city-seg" style="background:#bbdefb;width:10.3%;color:#1a3a6b">31</div>
     </div>
-    <div style="font-size:12px;color:#888;margin-left:6px">290</div>
+    <div style="font-size:12px;color:#888;margin-left:6px">300</div>
   </div>
-
-  <!-- 自然流: 一线3, 新一线5, 二线7, 三线7, 四线13, 五线7 = 42 -->
+  <!-- 自然流: 一线2, 新一线4, 二线6, 三线4, 四线9, 五线4 = 29 -->
   <div class="city-row">
     <div class="city-label">自然流</div>
     <div class="city-bar">
-      <div class="city-seg" style="background:#1565c0;width:7.1%">3</div>
-      <div class="city-seg" style="background:#1976d2;width:11.9%">5</div>
-      <div class="city-seg" style="background:#1e88e5;width:16.7%">7</div>
-      <div class="city-seg" style="background:#42a5f5;width:16.7%">7</div>
-      <div class="city-seg" style="background:#90caf9;width:31.0%;color:#1a3a6b">13</div>
-      <div class="city-seg" style="background:#bbdefb;width:16.7%;color:#1a3a6b">7</div>
+      <div class="city-seg" style="background:#1565c0;width:6.9%">2</div>
+      <div class="city-seg" style="background:#1976d2;width:13.8%">4</div>
+      <div class="city-seg" style="background:#1e88e5;width:20.7%">6</div>
+      <div class="city-seg" style="background:#42a5f5;width:13.8%">4</div>
+      <div class="city-seg" style="background:#90caf9;width:31.0%;color:#1a3a6b">9</div>
+      <div class="city-seg" style="background:#bbdefb;width:13.8%;color:#1a3a6b">4</div>
     </div>
-    <div style="font-size:12px;color:#888;margin-left:6px">42</div>
+    <div style="font-size:12px;color:#888;margin-left:6px">29</div>
   </div>
-
+  <!-- 山东深山: 三线1, 四线1, 五线1 = 3 -->
+  <div class="city-row">
+    <div class="city-label">山东深山</div>
+    <div class="city-bar">
+      <div class="city-seg" style="background:#42a5f5;width:33.3%">1</div>
+      <div class="city-seg" style="background:#90caf9;width:33.3%;color:#1a3a6b">1</div>
+      <div class="city-seg" style="background:#bbdefb;width:33.3%;color:#1a3a6b">1</div>
+    </div>
+    <div style="font-size:12px;color:#888;margin-left:6px">3</div>
+  </div>
   <!-- 合肥徽起: 四线1 = 1 -->
   <div class="city-row">
     <div class="city-label">合肥徽起</div>
@@ -549,8 +404,7 @@
     </div>
     <div style="font-size:12px;color:#888;margin-left:6px">1</div>
   </div>
-
-  <!-- 全渠道合计: 一线19, 新一线57, 二线51, 三线76, 四线93, 五线36, 其他1 = 333 -->
+  <!-- 合计: 一线19, 新一线57, 二线51, 三线76, 四线93, 五线36 = 333 -->
   <div class="city-row" style="margin-top:12px;border-top:1px solid #dce4f0;padding-top:10px">
     <div class="city-label" style="font-weight:600;color:#1a3a6b">合计</div>
     <div class="city-bar">
@@ -560,7 +414,6 @@
       <div class="city-seg" style="background:#42a5f5;width:22.8%">76</div>
       <div class="city-seg" style="background:#90caf9;width:27.9%;color:#1a3a6b">93</div>
       <div class="city-seg" style="background:#bbdefb;width:10.8%;color:#1a3a6b">36</div>
-      <div class="city-seg" style="background:#e3f2fd;width:0.3%;color:#1a3a6b"></div>
     </div>
     <div style="font-size:12px;color:#888;margin-left:6px">333</div>
   </div>
